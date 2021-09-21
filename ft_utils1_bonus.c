@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils1.c                                        :+:      :+:    :+:   */
+/*   ft_utils1_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jzhou <jzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 14:13:09 by jzhou             #+#    #+#             */
-/*   Updated: 2021/09/16 17:57:26 by jzhou            ###   ########.fr       */
+/*   Updated: 2021/09/20 17:49:38 by jzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_minitalk.h"
+#include "ft_minitalk_bonus.h"
 
 static char	*compare(unsigned long n, char *result, int base)
 {

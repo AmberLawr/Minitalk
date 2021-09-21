@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_minitalk.h                                      :+:      :+:    :+:   */
+/*   ft_minitalk_bonus.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jzhou <jzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 11:39:38 by jzhou             #+#    #+#             */
-/*   Updated: 2021/09/20 18:08:14 by jzhou            ###   ########.fr       */
+/*   Updated: 2021/09/20 18:08:11 by jzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MINITALK_H
-# define FT_MINITALK_H
+#ifndef FT_MINITALK_BONUS_H
+# define FT_MINITALK_BONUS_H
 
 # include <signal.h>
 # include <stdio.h>

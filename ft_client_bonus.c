@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_client.c                                        :+:      :+:    :+:   */
+/*   ft_client_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jzhou <jzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 11:38:21 by jzhou             #+#    #+#             */
-/*   Updated: 2021/09/21 14:41:28 by jzhou            ###   ########.fr       */
+/*   Updated: 2021/09/21 14:43:09 by jzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_minitalk.h"
+#include "ft_minitalk_bonus.h"
 #include <stdio.h>
 
 void	ft_sendmsg(char *str, int pid)
@@ -22,23 +22,31 @@ void	ft_sendmsg(char *str, int pid)
 	{
 		if (str[i] == '0')
 		{
+			usleep(100);
 			kill(pid, SIGUSR1);
-			usleep(30);
+			pause();
 		}
 		else if (str[i] == '1')
 		{
+			usleep(100);
 			kill(pid, SIGUSR2);
-			usleep(30);
+			pause();
 		}
 		i++;
 	}
 }
 
+void	ft_handlesig(int signal)
+{
+	(void)signal;
+}
+
 int	main(int argc, char **argv)
 {
-	char	*bi_str;
-	int		argcounter;
-	int		pid;
+	char				*bi_str;
+	int					argcounter;
+	int					pid;
+	struct sigaction	sa;
 
 	if (argc != 3)
 		return (0);
@@ -46,6 +54,9 @@ int	main(int argc, char **argv)
 	{
 		pid = ft_atoi(argv[1]);
 		argcounter = 0;
+		sa.sa_handler = &ft_handlesig;
+		sa.sa_flags = SA_SIGINFO;
+		sigaction(SIGUSR2, &sa, NULL);
 		while (argv[2][argcounter] != '\0')
 		{
 			bi_str = ft_itobase(argv[2][argcounter], 2);
